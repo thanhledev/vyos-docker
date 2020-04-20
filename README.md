@@ -15,7 +15,7 @@ For example:
 
 The directories of all VyOS ISO images can be found here: https://downloads.vyos.io/
 
-How to use the new VyOS docker image in Kathara
+#### How to use the new VyOS docker image in Kathara
 1. Create the vyatta node in Kathara
   ```
   sudo kathara vstart -n vyatta --eth 0:A 1:B 2:C 3:D 4:E --privileged --shell vbash
@@ -23,11 +23,15 @@ How to use the new VyOS docker image in Kathara
   **Remember to run kathara with sudo as we need to run the vyatta docker container with privileged**
 
 2. Login to the vyatta node
-  `kathara connect -v vyatta --shell vbash`
+  ```
+  kathara connect -v vyatta --shell vbash
+  ```
 
 3. How to configure the vyatta
-  - We perform another login inside the node:
-  `$ login`
+  - We perform another login inside the node terminal:
+  ```
+  $ login
+  ```
   with the following credentials: vyos/vyos
   - Run the vyos commands such as:
     - show configuration/interfaces...
