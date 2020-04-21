@@ -4,3 +4,4 @@ inst_root/
 squashfs/
 wroot/
 vyos.iso
+.fuse*
