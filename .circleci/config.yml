@@ -2,17 +2,33 @@
 version: 2.1
 
 jobs:
-  build: # name of your job
-    machine: # executor type
-      image: ubuntu-1604:201903-01 # # recommended linux image - includes Ubuntu 16.04, docker 18.09.3, docker-compose 1.23.1
+  build_vyos:
+    working_directory: ~/vyos-docker
+    machine:
+      image: ubuntu-1604:201903-01
+    steps:
+      - checkout
 
-      steps:
-        - run:
-            name: "Make it executable"
-            command: |
-              chmod +x build_vyos.sh
-        # Commands run in a Linux virtual machine environment
-        - run:
-            name: "Build Docker image"
-            command: |
-              ./build_vyos.sh unibaktr https://downloads.vyos.io/?dir=release/legacy/1.1.8
+workflows:
+  build:
+    jobs:
+      - build_vyos:
+          filters:
+              tags:
+                only: /.*/
+
+
+      # # recommended linux image - includes Ubuntu 16.04, docker 18.09.3, docker-compose 1.23.1
+
+#      steps:
+#        - checkout
+#        - run:
+#            name: "Make it executable"
+#            command: |
+#              chmod +x build_vyos.sh
+#        # Commands run in a Linux virtual machine environment
+#        - run:
+#            name: "Build Docker image"
+#            command: |
+#              ./build_vyos.sh unibaktr https://downloads.vyos.io/?dir=release/legacy/1.1.8
+#
