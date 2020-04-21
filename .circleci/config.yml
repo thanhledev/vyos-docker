@@ -8,5 +8,5 @@ jobs:
 
       steps:
         # Commands run in a Linux virtual machine environment
-        - chmod +x build_vyos.sh
-        - ./build_vyos.sh unibaktr https://downloads.vyos.io/?dir=release/legacy/1.1.8
+        - run: chmod +x build_vyos.sh
+        - run: ./build_vyos.sh unibaktr https://downloads.vyos.io/?dir=release/legacy/1.1.8
