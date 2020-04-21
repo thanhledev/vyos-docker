@@ -1,3 +1,5 @@
+[![uniba-ktr](https://circleci.com/gh/uniba-ktr/vyos-docker.svg?style=svg)](https://hub.docker.com/r/unibaktr/vyos)
+
 ### vyos-docker
 VyOs Docker image build tool.
 
