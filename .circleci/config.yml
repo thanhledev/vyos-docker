@@ -1,13 +1,12 @@
 # Use the latest 2.1 version of CircleCI pipeline process engine. See: https://circleci.com/docs/2.0/configuration-reference
 version: 2.1
-# Use a package of configuration called an orb.
-orbs:
-  # Declare a dependency on the welcome-orb
-  welcome: circleci/welcome-orb@0.4.1
-# Orchestrate or schedule a set of jobs
-workflows:
-  # Name the workflow "welcome"
-  welcome:
-    # Run the welcome/run job in its own container
-    jobs:
-      - welcome/run
+
+jobs:
+  build: # name of your job
+    machine: # executor type
+      image: ubuntu-1604:201903-01 # # recommended linux image - includes Ubuntu 16.04, docker 18.09.3, docker-compose 1.23.1
+
+      steps:
+        # Commands run in a Linux virtual machine environment
+        - chmod +x build_vyos.sh
+        - ./build_vyos.sh unibaktr https://downloads.vyos.io/?dir=release/legacy/1.1.8
