@@ -17,6 +17,12 @@ jobs:
           name: "Build Docker image"
           command: |
             ./build_vyos.sh unibaktr https://downloads.vyos.io/release/legacy/1.1.8/vyos-1.1.8-amd64.iso
+      - run:
+          name: "Push Docker image"
+          command: |
+            docker image ls
+            docker login -u ${DOCKER_USER} -p ${DOCKER_PASS}
+            docker push unibaktr/vyos
 
 workflows:
   build:

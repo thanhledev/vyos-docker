@@ -102,7 +102,7 @@ touch "$tarFile"
 sudo tar --numeric-owner -Jcaf "$tarFile" -C "$rootfsDir" --transform='s,^./,,' .
 echo >&2 "+ cat > '$dir/Dockerfile'"
 cat > "$dir/Dockerfile" <<'EOF'
-FROM debian:jessie
+FROM debian:jessie-slim
 ADD rootfs.tar.xz /
 ENTRYPOINT ["/sbin/init"]
 EOF
