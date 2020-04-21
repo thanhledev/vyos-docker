@@ -8,11 +8,11 @@ jobs:
 
       steps:
         - run:
-          name: "Make it executable"
-          command: |
-            chmod +x build_vyos.sh
+            name: "Make it executable"
+            command: |
+              chmod +x build_vyos.sh
         # Commands run in a Linux virtual machine environment
         - run:
-          name: "Build Docker image"
-          command: |
-            ./build_vyos.sh unibaktr https://downloads.vyos.io/?dir=release/legacy/1.1.8
+            name: "Build Docker image"
+            command: |
+              ./build_vyos.sh unibaktr https://downloads.vyos.io/?dir=release/legacy/1.1.8
